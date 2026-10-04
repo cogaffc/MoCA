@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MoCA is a multimodal benchmark for structured implicit social reasoning across affection, intent, and stance, with the CoDAR conflict-driven abductive reasoning framework.">
+  <meta name="theme-color" content="#173c34">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MoCA: Implicit Social Context Analysis">
+  <meta property="og:description" content="Beyond surface cues: 3,108 multimodal instances for recovering who expresses what toward whom, and how.">
+  <meta property="og:url" content="https://cogaffc.github.io/MoCA/">
+  <meta property="og:image" content="https://cogaffc.github.io/MoCA/assets/moca-teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://cogaffc.github.io/MoCA/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <title>MoCA: Implicit Social Context Analysis</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="wordmark" href="#" aria-label="MoCA home"><span class="brand-symbol" aria-hidden="true">m</span>MoCA</a>
+      <nav aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#codar">CoDAR</a>
+        <a href="#resources">Resources <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" aria-labelledby="title">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Multimodal social reasoning</p>
+      <h1 id="title"><span class="hero-name">MoCA<span class="title-dot">.</span></span><span class="hero-title">Implicit Social Context Analysis</span></h1>
+      <p class="hero-description">Understanding what is left unsaid.<br>A multimodal benchmark for reasoning about hidden emotions, intentions, and social stances.</p>
+      <div class="authors" aria-label="Authors">
+        <span>Wenhao Xu<sup>1,†</sup></span><span>Kaiwen Zhang<sup>1,†</sup></span><span>Hao Li<sup>1,3</sup></span><span>Maowei You<sup>1</sup></span><span>Yongzheng Ji<sup>1</sup></span><span>Siyuan Zuo<sup>1</sup></span><span>Jingxuan Yu<sup>1</sup></span><span>Sina A<sup>1</sup></span><span>Xinyao Tan<sup>1</sup></span><span>Bobo Li<sup>1</sup></span><span>Hao Fei<sup>2,*</sup></span><span>Mong-Li Lee<sup>1</sup></span><span>Wynne Hsu<sup>1</sup></span>
+      </div>
+      <p class="affiliations"><span><sup>1</sup> National University of Singapore</span><span><sup>2</sup> University of Oxford</span><span><sup>3</sup> Wuhan University</span></p>
+      <p class="author-note">† Equal contribution &nbsp; · &nbsp; * Corresponding author</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://github.com/Coder12188/MoCA"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5-7 7 7 7M16 5l7 7-7 7M14 3l-4 18"/></svg>Code <span aria-hidden="true">↗</span></a>
+        <a class="button button-secondary" href="https://huggingface.co/datasets/z4722/Implicit_dataset"><svg aria-hidden="true" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/></svg>Dataset <span aria-hidden="true">↗</span></a>
+      </div>
+      <dl class="stats">
+        <div><dt>Multimodal instances</dt><dd>3,108</dd></div>
+        <div><dt>Social scenarios</dt><dd>3</dd></div>
+        <div><dt>Structured output fields</dt><dd>4</dd></div>
+      </dl>
+    </section>
+
+    <section id="overview" class="section container" aria-labelledby="overview-title">
+      <div class="section-heading"><p class="eyebrow">01 / Overview</p><h2 id="overview-title">Beyond what we see and hear.</h2></div>
+      <div class="overview-copy">
+        <p>Social meaning is not always expressed directly. A smile can conceal frustration; a seemingly benign remark can pursue a hidden goal. Interpreting these signals requires reasoning about social relationships, cultural context, and the gap between an observed expression and its underlying meaning.</p>
+        <p>MoCA formalizes this challenge across <strong>affection</strong>, <strong>intent</strong>, and <strong>stance</strong>. Rather than predicting an isolated label, the task recovers a structured interpretation: the subject, target, realizing mechanism, and latent social label.</p>
+      </div>
+      <figure class="teaser-figure">
+        <a href="assets/moca-teaser.png" target="_blank" rel="noopener" aria-label="Open the MoCA task overview at full resolution (new tab)">
+          <img src="assets/moca-teaser.png" width="1144" height="882" alt="Three MoCA examples contrast surface-level interpretation with implicit social reasoning, recovering a subject, target, mechanism, and label in each scenario.">
+        </a>
+        <figcaption><span>From surface cues to implicit meaning.</span> Examples across the three MoCA scenarios. Select the figure to view it at full resolution.</figcaption>
+      </figure>
+    </section>
+
+    <section id="benchmark" class="benchmark-section section" aria-labelledby="benchmark-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">02 / The benchmark</p><h2 id="benchmark-title">Three scenarios.<br>One structured task.</h2></div>
+        <p class="section-lead">3,108 real-world multimodal instances, annotated to connect observable evidence with latent social meaning.</p>
+        <div class="scenario-grid">
+          <article class="scenario affection"><div class="scenario-top"><span class="scenario-index">01</span><span class="scenario-count">936 instances</span></div><h3>Affection</h3><p class="scenario-question">What does the subject truly feel?</p><p>Recover an emotional state conveyed indirectly or concealed through strategic expression.</p></article>
+          <article class="scenario intent"><div class="scenario-top"><span class="scenario-index">02</span><span class="scenario-count">1,179 instances</span></div><h3>Intent</h3><p class="scenario-question">What does the subject aim to achieve?</p><p>Infer a behavioral goal that is not explicitly stated in the observable words or actions.</p></article>
+          <article class="scenario stance"><div class="scenario-top"><span class="scenario-index">03</span><span class="scenario-count">993 instances</span></div><h3>Stance</h3><p class="scenario-question">How does the subject position themselves?</p><p>Identify an implicit position toward a target, including relational dynamics and power posture.</p></article>
+        </div>
+        <div class="output-heading"><h3>Who expresses what toward whom, and how?</h3><p>Each prediction contains four connected components.</p></div>
+        <dl class="output-grid">
+          <div><dt><span>01</span> Subject</dt><dd>The social actor whose latent state is inferred.</dd></div>
+          <div><dt><span>02</span> Target</dt><dd>The entity toward which the state is directed.</dd></div>
+          <div><dt><span>03</span> Mechanism</dt><dd>The strategy through which implicit meaning is conveyed.</dd></div>
+          <div><dt><span>04</span> Label</dt><dd>The underlying emotion, intention, or stance.</dd></div>
+        </dl>
+        <p class="benchmark-note">Evaluation measures component accuracy, subject–target alignment, mechanism accuracy given a correct label, and correctness of the complete four-component output.</p>
+      </div>
+    </section>
+
+    <section id="codar" class="section container" aria-labelledby="codar-title">
+      <div class="section-heading"><p class="eyebrow">03 / The framework</p><h2 id="codar-title">CoDAR</h2><p class="section-subtitle">Conflict-Driven Abductive Reasoning</p></div>
+      <p class="section-lead">Why this expression, in this context? CoDAR uses the conflict between observed expression and contextual expectation to infer the latent social state that explains it.</p>
+      <div class="method-grid">
+        <div class="method-description">
+          <ol class="stages">
+            <li><h3>Explicit perception</h3><p>Ground the analysis in observable textual, visual, temporal, and speech evidence.</p></li>
+            <li><h3>Social context construction</h3><p>Identify relevant facts, relationships, and social norms using model knowledge and, where needed, external retrieval.</p></li>
+            <li><h3>Expectation and conflict modeling</h3><p>Establish what would normally be expected, then locate the discrepancy with the observed expression.</p></li>
+            <li><h3>Abductive reasoning</h3><p>Explain the strategic function of that conflict and recover a subject–target–mechanism–label tuple within the scenario’s candidate space.</p></li>
+            <li><h3>Consistency verification</h3><p>Check the interpretation against the evidence, social context, and mechanism; revisit inconsistent components.</p></li>
+          </ol>
+          <a class="text-link" href="https://github.com/Coder12188/MoCA">Explore the code and prompts <span aria-hidden="true">↗</span></a>
+        </div>
+        <figure class="method-figure">
+          <a href="assets/codar-pipeline.png" target="_blank" rel="noopener" aria-label="Open the CoDAR framework diagram at full resolution (new tab)"><img src="assets/codar-pipeline.png" width="1100" height="1738" loading="lazy" alt="CoDAR's five-stage pipeline connects multimodal perception, social context, expectation conflict, abductive reasoning, and consistency checks. Feedback revisits upstream reasoning before producing the four-field output."></a>
+          <figcaption>The CoDAR reasoning workflow. Select to enlarge.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="resources" class="resources-section section" aria-labelledby="resources-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">04 / Resources</p><h2 id="resources-title">Explore MoCA.</h2></div>
+        <div class="resource-grid">
+          <a class="resource" href="https://github.com/Coder12188/MoCA"><div class="resource-top"><span>GitHub</span><span aria-hidden="true">↗</span></div><h3>Code &amp; annotations</h3><p>Access the benchmark annotations, reasoning scaffold, prompt contracts, and example cases.</p><span class="resource-path">Coder12188 / MoCA</span></a>
+          <a class="resource" href="https://huggingface.co/datasets/z4722/Implicit_dataset"><div class="resource-top"><span>Hugging Face</span><span aria-hidden="true">↗</span></div><h3>Multimodal dataset</h3><p>Find the image, video, and audio assets corresponding to MoCA’s annotated instances.</p><span class="resource-path">z4722 / Implicit_dataset</span></a>
+        </div>
+        <p class="release-note">The lightweight annotation JSON is hosted in the code repository; corresponding media are hosted on Hugging Face. The code repository documents the reference scaffold and its current scope.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="container site-footer"><a class="wordmark" href="#">MoCA<span class="title-dot">.</span></a><p>Implicit Social Context Analysis</p><a href="https://github.com/cogaffc/MoCA">Website source <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>
